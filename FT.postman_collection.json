@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "e49a05a6-67c1-4527-91c7-1686ea9763ff",
+		"name": "FT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ALL contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7777/api/contacts"
+			},
+			"response": []
+		},
+		{
+			"name": "ADD new contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"Max\",\n    \"surname\": \"Mustermann\",\n    \"email\": \"musstermann@mustermail.com\",\n    \"marketingPreferences\": [\n        {\n            \"brandName\": \"myBrand\",\n            \"channel\": \"email\",\n            \"optInStatus\": true\n        },\n        {\n            \"brandName\": \"mySecondBrand\",\n            \"channel\": \"phone\",\n            \"optInStatus\": false\n        }\n    ]\n}"
+				},
+				"url": "localhost:7777/api/contacts"
+			},
+			"response": []
+		},
+		{
+			"name": "GET single contact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7777/api/contact/0"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE contact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:7777/api/contact/0"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"Max\",\n    \"surname\": \"Mustermann\",\n    \"email\": \"musstermann@mustermail.com\",\n    \"marketingPreferences\": [\n        {\n            \"brandName\": \"myBrand\",\n            \"channel\": \"email\",\n            \"optInStatus\": true\n        },\n        {\n            \"brandName\": \"mySecondBrand\",\n            \"channel\": \"phone\",\n            \"optInStatus\": false\n        }\n    ]\n}"
+				},
+				"url": "localhost:7777/api/contact/0"
+			},
+			"response": []
+		},
+		{
+			"name": "Get preferences of a contact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7777/api/contacts/0/marketingPreferences"
+			},
+			"response": []
+		},
+		{
+			"name": "GET single preference of a contact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7777/api/contacts/0/0"
+			},
+			"response": []
+		},
+		{
+			"name": "POST new marketing preference to a contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"brandName\": \"mySecondBrand\",\n\t\"channel\": \"post\",\n\t\"optInStatus\": false\n}"
+				},
+				"url": "localhost:7777/api/contacts/0/marketingPreferences"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a preference of a contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brandName\": \"foo\",\n    \"channel\": \"email\",\n    \"optInStatus\": false\n}"
+				},
+				"url": "localhost:7777/api/contacts/0/0"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a marketing preference of a contact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:7777/api/contacts/0/0"
+			},
+			"response": []
+		}
+	]
+}
